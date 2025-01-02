@@ -1,0 +1,31 @@
+<html>
+    <head>
+        <title>
+            Vuln Project
+        </title>
+
+        <link rel="stylesheet" href="styles.css">
+    </head>
+    <body>
+        <div class="login-container">
+            <h2>Welcome Admin</h2>
+            <form action="/admin-home" method="post">
+                <div class="input-group">
+                    <label for="mfa">MFA Code</label>
+                    <input type="text" id="mfa" name="mfa" required>
+                </div>
+                <button type="submit">Login</button>
+            </form>
+
+            <script>
+                // Automatically fetch MFA code when page loads
+                fetch('/admin-mfa')
+                    .then(response => response.json())
+                    .then(data => {
+                        console.log(data);
+                    })
+                    .catch(error => console.log('Error fetching Admin MFA code:'));
+            </script>
+        </div>
+    </body>
+</html>

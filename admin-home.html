@@ -1,0 +1,42 @@
+<html>
+    <head>
+        <title>
+            Vuln Project
+        </title>
+
+        <link rel="stylesheet" href="styles.css">
+    </head>
+    <body>
+        <div class="login-container">
+            <h2>User Details</h2>
+
+            <table class="user-details-table">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Username</th>
+                        <th>Password</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    
+                </tbody>
+            </table>
+        </div>
+
+        <script>
+            // Automatically fetch user details table when page loads
+            fetch('/user-details')
+                .then(response => response.json())
+                .then(data => {
+                    let tableBody = document.querySelector('.user-details-table tbody');
+                    data.forEach(user => {
+                        let row = document.createElement('tr');
+                        row.innerHTML = `<td>${user.id}</td><td>${user.username}</td><td>${user.password}</td>`;
+                        tableBody.appendChild(row);
+                    });
+                })
+                .catch(error => console.log('Unable to show details...'));
+        </script>
+    </body>
+</html>
