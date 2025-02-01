@@ -10,7 +10,7 @@ This repository is for viewing only. Copying, modifying, or distributing is proh
 2. Turn on Hyper-V or WSL in "Turn Windows features on or off" (Restart might be required).    
 3. Run Docker.  
 4. Open CMD or custom Docker CLI.  
-5. make sure docker is running using the following command:  
+5. Make sure docker is running using the following command:  
    docker -v (check current Docker version)  
 6. Download Vuln Project files as a zip file from GitHub and extract them in the folder of your choice.  
 7. Go to the project folder using the following command:  
